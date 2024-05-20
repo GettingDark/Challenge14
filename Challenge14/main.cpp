@@ -5,10 +5,11 @@
 
 int main()
 {	
+    std::cout << std::boolalpha;
     Mystring str1 = "Antonio";
-    
-    str1 = -str1;
+    Mystring str2 = "Antonio";
 
+    std::cout << (str1 > str2) << std:: endl;
     str1.display();
 
     return 0;

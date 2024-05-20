@@ -74,25 +74,31 @@ Mystring Mystring::operator-() const
     return result;
 }
 
-//Mystring& Mystring::operator-(const Mystring& rhs)
-//{
-//
-//    delete[] str;
-//    str = new char[strlen(rhs.str) + 1];
-//    strcpy(str, rhs.str);
-//
-//    for (int i = 0; i < strlen(str); i++)
-//    {
-//        if (std::isupper(str[i]))
-//        {
-//            str[i] = std::tolower(str[i]);
-//        }
-//    }
-//    return *this;
-//}
-
 bool Mystring::operator==(const Mystring& rhs)
 {
+    if (strcmp(str, rhs.str) == 0)
+        return true;
+    return false;
+}
+
+bool Mystring::operator!=(const Mystring& rhs)
+{
+    if (strcmp(str, rhs.str) != 0)
+        return true;
+    return false;
+}
+
+bool Mystring::operator<(const Mystring& rhs)
+{
+    if (strcmp(str, rhs.str) < 0)
+        return true;
+    return false;
+}
+
+bool Mystring::operator>(const Mystring& rhs)
+{
+    if (strcmp(str, rhs.str) > 0)
+        return true;
     return false;
 }
 
