@@ -61,17 +61,16 @@ Mystring& Mystring::operator=(Mystring&& rhs)
     return *this;
 }
 
-Mystring Mystring::operator-() const
+Mystring& Mystring::operator-()
 {
-    Mystring result(*this);
-    for (int i = 0; i < strlen(result.str); i++)
+    for (int i = 0; i < strlen(str); i++)
     {
-        if (std::isupper(result.str[i]))
+        if (std::isupper(str[i]))
         {
-            result.str[i] = std::tolower(result.str[i]);
+            str[i] = std::tolower(str[i]);
         }
     }
-    return result;
+    return *this;
 }
 
 Mystring Mystring::operator+(const Mystring& rhs) const
@@ -108,6 +107,21 @@ Mystring Mystring::operator*(int value) const
 Mystring& Mystring::operator*=(int value)
 {
     return *this = *this * value;
+}
+
+Mystring& Mystring::operator++()
+{
+    for (int i = 0; i < strlen(str); i++)
+    {
+        if(std::islower(str[i]))
+            str[i] = std::toupper(str[i]);
+    }
+    return *this;
+}
+
+Mystring& Mystring::operator++(int)
+{
+    return *this += *this;
 }
 
 bool Mystring::operator==(const Mystring& rhs) const
