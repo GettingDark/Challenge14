@@ -17,11 +17,13 @@ public:
     Mystring& operator=(const Mystring& rhs);
     Mystring& operator=(Mystring&& rhs);
     Mystring operator-() const;
+    Mystring operator+(const Mystring& rhs);
+    Mystring& operator+=(const Mystring& rhs);
 
-    bool operator==(const Mystring& rhs);
-    bool operator!=(const Mystring& rhs);
-    bool operator<(const Mystring& rhs);
-    bool operator>(const Mystring& rhs);
+    bool operator==(const Mystring& rhs) const;
+    bool operator!=(const Mystring& rhs) const;
+    bool operator<(const Mystring& rhs) const;
+    bool operator>(const Mystring& rhs) const;
 
     void display() const;
 

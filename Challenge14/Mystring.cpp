@@ -74,32 +74,41 @@ Mystring Mystring::operator-() const
     return result;
 }
 
-bool Mystring::operator==(const Mystring& rhs)
+Mystring Mystring::operator+(const Mystring& rhs)
 {
-    if (strcmp(str, rhs.str) == 0)
-        return true;
-    return false;
+    //int length = strlen(str) + strlen(rhs.str);   
+    char* temp = new char [strlen(str) + strlen(rhs.str) + 1];
+    strcpy(temp, str);
+    strcat(temp, rhs.str);
+    Mystring result = temp;
+    delete[] temp;
+
+    return result;
 }
 
-bool Mystring::operator!=(const Mystring& rhs)
+Mystring& Mystring::operator+=(const Mystring& rhs)
 {
-    if (strcmp(str, rhs.str) != 0)
-        return true;
-    return false;
+    return *this = *this + rhs;
 }
 
-bool Mystring::operator<(const Mystring& rhs)
+bool Mystring::operator==(const Mystring& rhs) const
 {
-    if (strcmp(str, rhs.str) < 0)
-        return true;
-    return false;
+    return (strcmp(str, rhs.str) == 0);
 }
 
-bool Mystring::operator>(const Mystring& rhs)
+bool Mystring::operator!=(const Mystring& rhs) const
 {
-    if (strcmp(str, rhs.str) > 0)
-        return true;
-    return false;
+    return !(strcmp(str, rhs.str) == 0);
+}
+
+bool Mystring::operator<(const Mystring& rhs) const
+{
+    return (strcmp(str, rhs.str) < 0);
+}
+
+bool Mystring::operator>(const Mystring& rhs) const
+{
+    return (strcmp(str, rhs.str) > 0);
 }
 
 void Mystring::display() const
