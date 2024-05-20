@@ -74,7 +74,7 @@ Mystring Mystring::operator-() const
     return result;
 }
 
-Mystring Mystring::operator+(const Mystring& rhs)
+Mystring Mystring::operator+(const Mystring& rhs) const
 {
     //int length = strlen(str) + strlen(rhs.str);   
     char* temp = new char [strlen(str) + strlen(rhs.str) + 1];
@@ -89,6 +89,25 @@ Mystring Mystring::operator+(const Mystring& rhs)
 Mystring& Mystring::operator+=(const Mystring& rhs)
 {
     return *this = *this + rhs;
+}
+
+Mystring Mystring::operator*(int value) const
+{
+    char* temp = new char[strlen(str) * value + 1];
+    strcpy(temp, str);
+    for (int i = 1; i < value; i++)
+    {
+        strcat(temp,str);
+    }
+    Mystring result(temp);
+    delete[] temp;
+
+    return result;
+}
+
+Mystring& Mystring::operator*=(int value)
+{
+    return *this = *this * value;
 }
 
 bool Mystring::operator==(const Mystring& rhs) const

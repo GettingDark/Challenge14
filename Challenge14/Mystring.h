@@ -17,8 +17,10 @@ public:
     Mystring& operator=(const Mystring& rhs);
     Mystring& operator=(Mystring&& rhs);
     Mystring operator-() const;
-    Mystring operator+(const Mystring& rhs);
+    Mystring operator+(const Mystring& rhs) const;
     Mystring& operator+=(const Mystring& rhs);
+    Mystring operator*(int value) const;
+    Mystring& operator*=(int value);
 
     bool operator==(const Mystring& rhs) const;
     bool operator!=(const Mystring& rhs) const;

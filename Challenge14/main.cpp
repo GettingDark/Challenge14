@@ -5,13 +5,10 @@
 
 int main()
 {	
-    std::cout << std::boolalpha;
-    Mystring str1 = "Hello, ";
-    Mystring str2 = "World!";
+    Mystring str2 = "ABC ";
 
-    str1 += str1 + str2;
-    std::cout << str1 << std:: endl;
-    /*str1.display();*/
+    str2 *= 4;
+    std::cout << str2 << std:: endl;
 
     return 0;
 }
