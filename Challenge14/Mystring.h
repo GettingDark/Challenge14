@@ -16,6 +16,10 @@ public:
 
     Mystring& operator=(const Mystring& rhs);
     Mystring& operator=(Mystring&& rhs);
+    Mystring operator-() const;
+    //Mystring& operator+(const Mystring& rhs);
+
+    bool operator==(const Mystring& rhs);
 
     void display() const;
 

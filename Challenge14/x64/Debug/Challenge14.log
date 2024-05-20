@@ -1,0 +1,3 @@
+﻿  Mystring.cpp
+D:\Projects\Lafore\Challenge14\Challenge14\Mystring.cpp(105,49): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Challenge14.vcxproj -> D:\Projects\Lafore\Challenge14\x64\Debug\Challenge14.exe

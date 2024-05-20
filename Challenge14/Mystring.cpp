@@ -1,3 +1,4 @@
+#pragma warning(disable : 4996)
 #include <iostream>
 #include <cstring>
 #include "Mystring.h"
@@ -60,8 +61,42 @@ Mystring& Mystring::operator=(Mystring&& rhs)
     return *this;
 }
 
+Mystring Mystring::operator-() const
+{
+    Mystring result(*this);
+    for (int i = 0; i < strlen(result.str); i++)
+    {
+        if (std::isupper(result.str[i]))
+        {
+            result.str[i] = std::tolower(result.str[i]);
+        }
+    }
+    return result;
+}
 
-void Mystring::display() const 
+//Mystring& Mystring::operator-(const Mystring& rhs)
+//{
+//
+//    delete[] str;
+//    str = new char[strlen(rhs.str) + 1];
+//    strcpy(str, rhs.str);
+//
+//    for (int i = 0; i < strlen(str); i++)
+//    {
+//        if (std::isupper(str[i]))
+//        {
+//            str[i] = std::tolower(str[i]);
+//        }
+//    }
+//    return *this;
+//}
+
+bool Mystring::operator==(const Mystring& rhs)
+{
+    return false;
+}
+
+void Mystring::display() const
 {
     std::cout << str << " : " << get_length() << std::endl;
 }
